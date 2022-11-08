@@ -4,6 +4,10 @@ import org.testng.annotations.Test;
 
 import java.util.logging.Logger;
 
+/***
+ * Steps for logging into an ESPN account
+ *
+ */
 public class LogInESPN extends TestStarter{
     public Logger log = Logger.getLogger(String.valueOf(LogInESPN.class));
     @Test

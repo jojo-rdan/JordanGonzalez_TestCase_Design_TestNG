@@ -5,6 +5,10 @@ import org.testng.annotations.BeforeSuite;
 
 import java.util.logging.Logger;
 
+/***
+ * Steps to validate before starting the subsequent tests
+ *
+ */
 public class TestStarter {
     public Logger log = Logger.getLogger(String.valueOf(TestStarter.class));
     @BeforeSuite

@@ -1,16 +1,16 @@
 package org.globant;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
-
-import java.util.logging.Logger;
 
 /***
  * Steps to validate before starting the subsequent tests
  *
  */
 public class TestStarter {
-    public Logger log = Logger.getLogger(String.valueOf(TestStarter.class));
+    public Logger log = LoggerFactory.getLogger(TestStarter.class);
     @BeforeSuite
     public void AccountValidator(){
         log.info("Open the browser");

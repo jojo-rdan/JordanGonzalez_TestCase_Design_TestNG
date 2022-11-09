@@ -1,15 +1,15 @@
 package org.globant;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
-
-import java.util.logging.Logger;
 
 /***
  * Steps to log out of an ESPN account
  *
  */
 public class LogOutESPN extends TestStarter{
-    public Logger log = Logger.getLogger(String.valueOf(LogOutESPN.class));
+    public Logger log = LoggerFactory.getLogger(LogOutESPN.class);
     @Test
     public void LogOut(){
         log.info("Click on the log in option on the user avatar");

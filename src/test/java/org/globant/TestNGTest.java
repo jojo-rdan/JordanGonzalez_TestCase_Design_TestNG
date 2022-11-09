@@ -1,15 +1,15 @@
 package org.globant;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
-
-import java.util.logging.Logger;
 
 /***
  * Just a test class to see if TestNG works properly
  *
  */
 public class TestNGTest {
-    public Logger log = Logger.getLogger(String.valueOf(TestNGTest.class));
+    Logger log = LoggerFactory.getLogger(TestNGTest.class);
     @Test
     public void TestTester(){
         log.info("I made it?");

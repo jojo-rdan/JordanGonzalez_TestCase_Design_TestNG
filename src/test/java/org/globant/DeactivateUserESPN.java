@@ -1,15 +1,15 @@
 package org.globant;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
-
-import java.util.logging.Logger;
 
 /***
  * Steps to deactivate an ESPN account
  *
  */
 public class DeactivateUserESPN extends TestStarter{
-    public Logger log = Logger.getLogger(String.valueOf(LogInESPN.class));
+    public Logger log = LoggerFactory.getLogger(DeactivateUserESPN.class);
     @Test
     public void AccountDeactivation(){
         log.info("Click on the 'Log In' option on the user avatar");

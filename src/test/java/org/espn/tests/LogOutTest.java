@@ -22,7 +22,7 @@ public class LogOutTest extends BaseTest{
     @Test
     public void LogOut(){
         home.mouseOverUser();
-        watch.clickOnLogOutButton();
-        checkThat("Validate session is log out from user panel", watch.isUsernameNotDisplayed(), is(true));
+        home.clickOnLogOutButton();
+        checkThat("Validate session is log out from user panel", home.isUsernameNotDisplayed(), is(true));
     }
 }

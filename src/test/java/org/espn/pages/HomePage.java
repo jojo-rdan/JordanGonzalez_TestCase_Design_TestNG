@@ -1,6 +1,7 @@
 package org.espn.pages;
 
 import org.espn.configuration.WebOperations;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -34,6 +35,8 @@ public class HomePage extends BasePage{
     private WebElement watchPage;
     @FindBy(css = "#global-nav > ul > li.pillar.watch > a")
     private WebElement watchButton;
+    @FindBy(css = ".display-user")
+    private WebElement displayUser;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -80,5 +83,8 @@ public class HomePage extends BasePage{
     }
     public void clickOnLogOutButton(){
         clickElement(logOut);
+    }
+    public boolean isUsernameNotDisplayed(){
+        return !displayUser.findElement(By.tagName("span")).isDisplayed();
     }
 }

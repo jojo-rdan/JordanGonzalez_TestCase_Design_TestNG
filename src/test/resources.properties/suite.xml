@@ -5,10 +5,15 @@
         <listener class-name="org.espn.utils.Listener"/>
     </listeners>
     <parameter name="url" value="https://www.espnqa.com/?src=com/&amp;_adblock=true&amp;espn=cloud"/>
-    <test name="ESPN tests">
+    <test name="ESPN doing LogIn">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="org.espn.tests.HomeTest"/>
+        </classes>
+    </test>
+    <test name="ESPN doing LogOut">
+        <parameter name="browser" value="chrome"/>
+        <classes>
             <class name="org.espn.tests.LogOutTest"/>
         </classes>
     </test>

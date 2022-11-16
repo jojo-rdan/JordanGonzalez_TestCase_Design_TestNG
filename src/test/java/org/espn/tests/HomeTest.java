@@ -37,6 +37,7 @@ public class HomeTest extends BaseTest{
         checkThat("The element 'Nav text' has the right information previously\n" +
                 "entered in the sign up modal: 'Welcome {{username}}!'", watch.isUsernameDisplayed(), is(true));
         watch.clickOnLogOutButton();
+        watch.mouseOverUser();
         checkThat("The user has logged out successfully i.e. Validate the element 'Nav text'\n" +
                 "has text: 'Welcome!' without user name specified", watch.isUsernameNotDisplayed(), is(true));
     }

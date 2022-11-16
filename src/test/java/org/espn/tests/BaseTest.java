@@ -2,6 +2,7 @@ package org.espn.tests;
 
 import org.espn.configuration.Driver;
 import org.espn.pages.HomePage;
+import org.espn.pages.Watch;
 import org.espn.reporting.Reporter;
 import org.hamcrest.Matcher;
 import org.hamcrest.MatcherAssert;
@@ -14,6 +15,7 @@ import static java.lang.String.format;
 public class BaseTest {
     Driver driver;
     HomePage home;
+    Watch watch;
 
     @Parameters({"browser", "url"})
     @BeforeTest
@@ -25,6 +27,7 @@ public class BaseTest {
         driver.getDriver().get(url);
         driver.getDriver().manage().window().maximize();
         home = new HomePage(driver.getDriver());
+        //watch = new Watch(driver.getDriver());
     }
 
     @AfterTest

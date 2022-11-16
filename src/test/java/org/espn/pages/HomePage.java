@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePage extends BasePage{
     //WebOperations webOperations = new WebOperations(getDriver());
@@ -29,6 +30,10 @@ public class HomePage extends BasePage{
     private WebElement passwordInput;
     @FindBy(css = "#global-header > div.container > ul > li.user > div > div > ul.account-management > li:nth-child(9) > a")
     private WebElement logOut;
+    @FindBy(linkText = "https://www.espn.com.co/watch/?redirected=true")
+    private WebElement watchPage;
+    @FindBy(css = "#global-nav > ul > li.pillar.watch > a")
+    private WebElement watchButton;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -67,6 +72,11 @@ public class HomePage extends BasePage{
     }
     public void getOutIframe(){
         getDriver().switchTo().defaultContent();
+        super.wait.until(ExpectedConditions.invisibilityOf(iframe));
+    }
+    public Watch goToWatchPage(){
+        clickElement(watchButton);
+        return new Watch(getDriver());
     }
     public void clickOnLogOutButton(){
         clickElement(logOut);

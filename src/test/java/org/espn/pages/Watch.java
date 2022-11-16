@@ -1,19 +1,14 @@
 package org.espn.pages;
 
-import org.espn.configuration.WebOperations;
-import org.espn.tests.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Watch extends BasePage {
-    @FindBy(css = "#global-nav > ul > li.pillar.watch > a > span > span.link-text")
-    private WebElement watchButton;
     @FindBy(css = "section.Carousel")
     private List<WebElement> carouselList;
     @FindBy(css = ".lightbox__closebtn")
@@ -24,9 +19,10 @@ public class Watch extends BasePage {
     private WebElement displayUser;
     @FindBy(css = "#global-header > div.container > ul > li.user > div > div > ul.account-management > li:nth-child(9) > a")
     private WebElement logOut;
+    @FindBy(css = ".BucketsContainer > div:nth-child(1) > section > div:nth-child(2) > div > div > ul > li:nth-child(2)")
+    private WebElement secondCardOnFirstCarousel;
 
     public Watch(WebDriver driver) {super(driver);}
-    public void clickOnWatch(){clickElement(watchButton);}
     public List<WebElement> getCarouselElements(){
         return carouselList.get(0).findElements(By.cssSelector("ul.Carousel__Inner li"));
     }
@@ -35,11 +31,10 @@ public class Watch extends BasePage {
         return carouselList.size() > 0;
     }
     public void clickOnSecondCardFirstCarousel(){
-        clickElement(getCarouselElements().get(1));
+        clickElement(secondCardOnFirstCarousel);
     }
     public boolean isXButtonDisplayed(){
-        waitForElements(By.cssSelector("ul.Carousel__Inner li"));
-        return getCarouselElements().get(1).findElements(By.cssSelector(".lightbox__closebtn")).get(0).isDisplayed();
+        return secondCardOnFirstCarousel.findElement(By.className("lightbox__closebtn")).isDisplayed();
     }
     public void clickOnXButton(){
         clickElement(xButton);

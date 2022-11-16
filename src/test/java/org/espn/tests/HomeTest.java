@@ -1,6 +1,7 @@
 package org.espn.tests;
 
 
+import org.espn.pages.Watch;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -10,7 +11,7 @@ public class HomeTest extends BaseTest{
     private final String password = "Benjamin2022";
 
     @Test
-    public void LogIn() {
+    public void logIn() {
         home.mouseOverUser();
         home.clickOnLogInHomePage();
         home.goToIframe();
@@ -22,5 +23,21 @@ public class HomeTest extends BaseTest{
         home.typePassword(password);
         home.clickOnLogInButton();
         home.getOutIframe();
+    }
+    @Test
+    public void watch() {
+        home.goToWatchPage();
+        watch = new Watch(driver.getDriver());
+        checkThat("At least one carousel is present", watch.atLeastOneCarouselIsDisplayed(), is(true));
+        watch.clickOnSecondCardFirstCarousel();
+        checkThat("X button to close is present", watch.isXButtonDisplayed(), is(true));
+        watch.clickOnXButton();
+        watch.previousPage();
+        watch.mouseOverUser();
+        checkThat("The element 'Nav text' has the right information previously\n" +
+                "entered in the sign up modal: 'Welcome {{username}}!'", watch.isUsernameDisplayed(), is(true));
+        watch.clickOnLogOutButton();
+        checkThat("The user has logged out successfully i.e. Validate the element 'Nav text'\n" +
+                "has text: 'Welcome!' without user name specified", watch.isUsernameNotDisplayed(), is(true));
     }
 }

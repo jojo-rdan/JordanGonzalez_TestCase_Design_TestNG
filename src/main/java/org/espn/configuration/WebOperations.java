@@ -1,5 +1,6 @@
 package org.espn.configuration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -30,4 +31,5 @@ public class WebOperations {
     public void waitForVisibility(WebElement element) {wait.until(ExpectedConditions.visibilityOf(element));}
     public void waitForVisibility(List<WebElement> elements) {wait.until(ExpectedConditions.visibilityOfAllElements(elements));}
     public void waitForClickable(WebElement element) {wait.until(ExpectedConditions.elementToBeClickable(element));}
+    public void waitForElements(By element){wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(element));}
 }

@@ -4,8 +4,8 @@
     <listeners>
         <listener class-name="org.espn.utils.Listener"/>
     </listeners>
-    <parameter name="url" value="https://www.espnqa.com/?src=com\&amp;_adblock=true&amp;espn=cloud"/>
-    <test name="">
+    <parameter name="url" value="https://www.espnqa.com/?src=com/&amp;_adblock=true&amp;espn=cloud"/>
+    <test name="Log In test">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="org.espn.tests.HomeTest"/>

@@ -29,7 +29,10 @@ public class WebOperations {
     }
     public void typeOnInput(WebElement element, String text) {element.sendKeys(text);}
     public void waitForVisibility(WebElement element) {wait.until(ExpectedConditions.visibilityOf(element));}
-    public void waitForVisibility(List<WebElement> elements) {wait.until(ExpectedConditions.visibilityOfAllElements(elements));}
     public void waitForClickable(WebElement element) {wait.until(ExpectedConditions.elementToBeClickable(element));}
     public void waitForElements(By element){wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(element));}
+    public void switchToIframe(WebElement element) {
+        waitForVisibility(element);
+        getDriver().switchTo().frame(element);
+    }
 }

@@ -6,11 +6,12 @@ import org.testng.annotations.Test;
 import static org.hamcrest.core.Is.is;
 
 public class LogOutTest extends BaseTest{
-    private final String email = "chutaen@gmail.com";
+    private final String email = "chutaen4@gmail.com";
     private final String password = "Benjamin2022";
 
     @BeforeTest
     public void setUpPreviousLogIn(){
+        checkThat("Promo banner is displayed", home.isPromoBannerDisplayed(), is(true) );
         home.mouseOverUser();
         home.clickOnLogInHomePage();
         home.goToIframe();

@@ -17,4 +17,10 @@
             <class name="org.espn.tests.LogOutTest"/>
         </classes>
     </test>
+    <test name="ESPN doing Deactivation">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.espn.tests.DeactivateTest"/>
+        </classes>
+    </test>
 </suite>

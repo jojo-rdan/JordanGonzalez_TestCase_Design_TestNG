@@ -22,7 +22,6 @@ public class Driver {
                 break;
         }
     }
-
     public WebDriver getDriver() {
         return driver;
     }

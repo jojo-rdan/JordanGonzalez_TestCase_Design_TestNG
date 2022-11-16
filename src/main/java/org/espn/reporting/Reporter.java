@@ -8,5 +8,4 @@ public final class Reporter {
     private static Logger getLogger() {return LoggerFactory.getLogger(Reporter.class);}
     public static void info(String text) {getLogger().info(text);}
     public static void error(String text) {getLogger().error(text);}
-    public static void warning(String text) {getLogger().warn(text);}
 }

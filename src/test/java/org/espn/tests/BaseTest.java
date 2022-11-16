@@ -27,12 +27,9 @@ public class BaseTest {
         driver.getDriver().get(url);
         driver.getDriver().manage().window().maximize();
         home = new HomePage(driver.getDriver());
-        //watch = new Watch(driver.getDriver());
     }
-
     @AfterTest
     public void teardown(){driver.getDriver().quit();}
-
     protected <T> void checkThat(String description, T actualValue, Matcher<? super T> expectedValue){
         Reporter.info(format("Checking that " + description.toLowerCase() + " [Expectation: %s]", expectedValue));
         try{

@@ -107,7 +107,7 @@ public class HomePage extends BasePage{
         clickElement(logOut);
     }
     public boolean isUsernameNotDisplayed(){
-        return !displayUser.findElement(By.tagName("span")).isDisplayed();
+        return displayUser.findElement(By.tagName("span")).isDisplayed();
     }
     public void clickOnDeleteAccountConfirmation(){clickElement(deleteAccountConfirmation);}
     public void clickOnOkButton(){clickElement(okButton);}

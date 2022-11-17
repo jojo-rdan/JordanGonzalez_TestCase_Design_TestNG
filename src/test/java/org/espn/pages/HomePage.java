@@ -56,6 +56,7 @@ public class HomePage extends BasePage{
     }
     public void mouseOverUser() {
         Actions action = new Actions(getDriver());
+        super.waitForVisibility(userIcon);
         action.moveToElement(userIcon).perform();
     }
     public void clickOnLogInHomePage(){

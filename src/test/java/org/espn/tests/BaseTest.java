@@ -7,7 +7,7 @@ import org.espn.reporting.Reporter;
 import org.hamcrest.Matcher;
 import org.hamcrest.MatcherAssert;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
 import static java.lang.String.format;
@@ -18,7 +18,7 @@ public class BaseTest {
     Watch watch;
 
     @Parameters({"browser", "url"})
-    @BeforeTest
+    @BeforeClass
     public void testSetUp(String browser, String url){
         driver = new Driver(browser);
         Reporter.info("Deleting all cookies");

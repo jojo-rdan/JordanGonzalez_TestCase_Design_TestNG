@@ -19,24 +19,24 @@ public class Watch extends BasePage {
     private WebElement displayUser;
     @FindBy(css = "#global-header > div.container > ul > li.user > div > div > ul.account-management > li:nth-child(9) > a")
     private WebElement logOut;
-    @FindBy(css = ".BucketsContainer > div:nth-child(1) > section > div:nth-child(2) > div > div > ul > li:nth-child(2)")
+    @FindBy(xpath = "//body/div[@id='espnfitt']/div[@id='fitt-analytics']/div[1]/main[1]/section[1]/div[1]/section[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]/div[1]/figure[1]/div[2]/picture[1]/img[1]")
     private WebElement secondCardOnFirstCarousel;
 
     public Watch(WebDriver driver) {super(driver);}
-    public List<WebElement> getCarouselElements(){
-        return carouselList.get(0).findElements(By.cssSelector("ul.Carousel__Inner li"));
-    }
     public boolean atLeastOneCarouselIsDisplayed(){
         waitForElements(By.cssSelector("ul.Carousel__Inner li"));
         return carouselList.size() > 0;
     }
     public void clickOnSecondCardFirstCarousel(){
+        super.waitForVisibility(secondCardOnFirstCarousel);
         clickElement(secondCardOnFirstCarousel);
     }
     public boolean isXButtonDisplayed(){
-        return secondCardOnFirstCarousel.findElement(By.className("lightbox__closebtn")).isDisplayed();
+        super.waitForVisibility(xButton);
+        return xButton.isDisplayed();
     }
     public void clickOnXButton(){
+        super.waitForVisibility(xButton);
         clickElement(xButton);
     }
     public void previousPage(){
@@ -44,6 +44,7 @@ public class Watch extends BasePage {
     }
     public void mouseOverUser() {
         Actions action = new Actions(getDriver());
+        super.waitForVisibility(userIcon);
         action.moveToElement(userIcon).perform();
     }
     public boolean isUsernameDisplayed(){

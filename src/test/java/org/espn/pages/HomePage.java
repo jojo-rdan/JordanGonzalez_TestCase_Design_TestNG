@@ -92,7 +92,6 @@ public class HomePage extends BasePage{
     }
     public void clickOnDeleteAccountButton(){
         super.waitForVisibility(deleteAccountButton);
-        System.out.println("Acá                 es!" + deleteAccountButton.getText());
         clickElement(deleteAccountButton);
     }
     public void getOutIframe(){

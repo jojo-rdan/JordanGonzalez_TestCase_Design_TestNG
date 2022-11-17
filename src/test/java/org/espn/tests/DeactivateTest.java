@@ -4,7 +4,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import static org.hamcrest.core.Is.is;
 public class DeactivateTest extends BaseTest{
-    private final String email = "chutaen5@gmail.com";
+    private final String email = "chutaen6@gmail.com";
     private final String password = "Benjamin2022";
 
     @BeforeTest
